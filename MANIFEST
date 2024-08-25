@@ -1,6 +1,6 @@
-MANIFEST       ���̃t�@�C��
-README         �܂��ŏ��ɂ��ǂ݉�����
-NOTICE         �Ō��Ƌ����ɂ��Ă̍�����
-CHANGES        head�̃��f���`�F���W�̗���
-head.1         head�̃}�j���A��
-head.x         head���s�t�@�C��
+MANIFEST       このファイル
+README         まず最初にお読み下さい
+NOTICE         版権と許諾についての告示書
+CHANGES        headのモデルチェンジの履歴
+head.1         headのマニュアル
+head.x         head実行ファイル

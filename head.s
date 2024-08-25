@@ -2,24 +2,24 @@
 *
 * Itagaki Fumihiko 28-Jan-93  Create.
 * 1.0
-* Itagaki Fumihiko 02-Feb-93  count ‚ªƒoƒCƒg’PˆÊ‚Åo—Í‚ªƒuƒƒbƒNEƒfƒoƒCƒX‚Ì‚Æ‚«‚É
-*                             ƒwƒbƒ_‚ªo—Í‚³‚ê‚È‚¢ƒoƒO‚ğC³D
+* Itagaki Fumihiko 02-Feb-93  count ãŒãƒã‚¤ãƒˆå˜ä½ã§å‡ºåŠ›ãŒãƒ–ãƒ­ãƒƒã‚¯ãƒ»ãƒ‡ãƒã‚¤ã‚¹ã®ã¨ãã«
+*                             ãƒ˜ãƒƒãƒ€ãŒå‡ºåŠ›ã•ã‚Œãªã„ãƒã‚°ã‚’ä¿®æ­£ï¼
 * 1.1
-* Itagaki Fumihiko 06-Feb-93  ƒtƒ@ƒCƒ‹ˆø”‚É‰ßè‚È / ‚ª‚ ‚ê‚Îœ‹‚·‚é
+* Itagaki Fumihiko 06-Feb-93  ãƒ•ã‚¡ã‚¤ãƒ«å¼•æ•°ã«éå‰°ãª / ãŒã‚ã‚Œã°é™¤å»ã™ã‚‹
 * Itagaki Fumihiko 06-Feb-93  bsr tfopen -> DOS _OPEN
 * Itagaki Fumihiko 06-Feb-93  bsr fclose -> DOS _CLOSE
 * Itagaki Fumihiko 06-Feb-93  bsr mulul -> lsl.l
 * 1.2
-* Itagaki Fumihiko 09-Feb-93  head_byte ‚Å _WRITE ‚Ìf’f‚ğ–Y‚ê‚Ä‚¢‚½
+* Itagaki Fumihiko 09-Feb-93  head_byte ã§ _WRITE ã®è¨ºæ–­ã‚’å¿˜ã‚Œã¦ã„ãŸ
 * 1.3
-* Itagaki Fumihiko 19-Feb-93  •W€“ü—Í‚ªØ‚è‘Ö‚¦‚ç‚ê‚Ä‚¢‚Ä‚à’[––‚©‚ç^C‚â^S‚È‚Ç‚ªŒø‚­‚æ‚¤‚É‚µ‚½
-* Itagaki Fumihiko 19-Feb-93  •W€“ü—Í‚Íæ“ª‚ÉƒV[ƒN‚µ‚Ä‚©‚çˆ—‚·‚é
+* Itagaki Fumihiko 19-Feb-93  æ¨™æº–å…¥åŠ›ãŒåˆ‡ã‚Šæ›¿ãˆã‚‰ã‚Œã¦ã„ã¦ã‚‚ç«¯æœ«ã‹ã‚‰^Cã‚„^Sãªã©ãŒåŠ¹ãã‚ˆã†ã«ã—ãŸ
+* Itagaki Fumihiko 19-Feb-93  æ¨™æº–å…¥åŠ›ã¯å…ˆé ­ã«ã‚·ãƒ¼ã‚¯ã—ã¦ã‹ã‚‰å‡¦ç†ã™ã‚‹
 * 1.4
-* Itagaki Fumihiko 18-Sep-94  ‚½‚Æ‚¦‚Î -5c ‚Å’[––‚©‚ç ab^Z ‚ğ“ü—Í‚µ‚½‚Æ‚« ^Z ‚ª EOF ‚Æ‚µ‚Ä”F¯
-*                             ‚³‚ê‚È‚¢ƒoƒO‚ğC³.
+* Itagaki Fumihiko 18-Sep-94  ãŸã¨ãˆã° -5c ã§ç«¯æœ«ã‹ã‚‰ ab^Z ã‚’å…¥åŠ›ã—ãŸã¨ã ^Z ãŒ EOF ã¨ã—ã¦èªè­˜
+*                             ã•ã‚Œãªã„ãƒã‚°ã‚’ä¿®æ­£.
 * 1.5
 *
-* Usage: head [ -qvBCZ ] { [ -<N>[ckl] ] [ -- ] [ <ƒtƒ@ƒCƒ‹> ] } ...
+* Usage: head [ -qvBCZ ] { [ -<N>[ckl] ] [ -- ] [ <ãƒ•ã‚¡ã‚¤ãƒ«> ] } ...
 
 .include doscall.h
 .include chrcode.h
@@ -55,8 +55,8 @@ start:
 		bra.s	start1
 		dc.b	'#HUPAIR',0
 start1:
-		lea	stack_bottom(pc),a7		*  A7 := ƒXƒ^ƒbƒN‚Ì’ê
-		lea	$10(a0),a0			*  A0 : PDBƒAƒhƒŒƒX
+		lea	stack_bottom(pc),a7		*  A7 := ã‚¹ã‚¿ãƒƒã‚¯ã®åº•
+		lea	$10(a0),a0			*  A0 : PDBã‚¢ãƒ‰ãƒ¬ã‚¹
 		move.l	a7,d0
 		sub.l	a0,d0
 		move.l	d0,-(a7)
@@ -66,23 +66,23 @@ start1:
 	*
 		move.l	#-1,stdin
 	*
-	*  ˆø”•À‚ÑŠi”[ƒGƒŠƒA‚ğŠm•Û‚·‚é
+	*  å¼•æ•°ä¸¦ã³æ ¼ç´ã‚¨ãƒªã‚¢ã‚’ç¢ºä¿ã™ã‚‹
 	*
-		lea	1(a2),a0			*  A0 := ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚Ì•¶š—ñ‚Ìæ“ªƒAƒhƒŒƒX
-		bsr	strlen				*  D0.L := ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚Ì•¶š—ñ‚Ì’·‚³
+		lea	1(a2),a0			*  A0 := ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã®æ–‡å­—åˆ—ã®å…ˆé ­ã‚¢ãƒ‰ãƒ¬ã‚¹
+		bsr	strlen				*  D0.L := ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã®æ–‡å­—åˆ—ã®é•·ã•
 		addq.l	#1,d0
 		bsr	malloc
 		bmi	insufficient_memory
 
-		movea.l	d0,a1				*  A1 := ˆø”•À‚ÑŠi”[ƒGƒŠƒA‚Ìæ“ªƒAƒhƒŒƒX
+		movea.l	d0,a1				*  A1 := å¼•æ•°ä¸¦ã³æ ¼ç´ã‚¨ãƒªã‚¢ã®å…ˆé ­ã‚¢ãƒ‰ãƒ¬ã‚¹
 	*
-	*  ˆø”‚ğƒfƒR[ƒh‚µC‰ğß‚·‚é
+	*  å¼•æ•°ã‚’ãƒ‡ã‚³ãƒ¼ãƒ‰ã—ï¼Œè§£é‡ˆã™ã‚‹
 	*
-		moveq	#0,d6				*  D6.W : ƒGƒ‰[EƒR[ƒh
-		bsr	DecodeHUPAIR			*  ˆø”‚ğƒfƒR[ƒh‚·‚é
-		movea.l	a1,a0				*  A0 : ˆø”ƒ|ƒCƒ“ƒ^
-		move.l	d0,d7				*  D7.L : ˆø”ƒJƒEƒ“ƒ^
-		moveq	#0,d5				*  D5.B : ƒtƒ‰ƒO
+		moveq	#0,d6				*  D6.W : ã‚¨ãƒ©ãƒ¼ãƒ»ã‚³ãƒ¼ãƒ‰
+		bsr	DecodeHUPAIR			*  å¼•æ•°ã‚’ãƒ‡ã‚³ãƒ¼ãƒ‰ã™ã‚‹
+		movea.l	a1,a0				*  A0 : å¼•æ•°ãƒã‚¤ãƒ³ã‚¿
+		move.l	d0,d7				*  D7.L : å¼•æ•°ã‚«ã‚¦ãƒ³ã‚¿
+		moveq	#0,d5				*  D5.B : ãƒ•ãƒ©ã‚°
 		move.l	#DEFAULT_COUNT,count
 decode_opt_loop1:
 		tst.l	d7
@@ -170,12 +170,12 @@ set_option_done:
 		bra	decode_opt_loop1
 
 decode_opt_done:
-		moveq	#1,d0				*  o—Í‚Í
-		bsr	is_chrdev			*  ƒLƒƒƒ‰ƒNƒ^EƒfƒoƒCƒX‚©H
+		moveq	#1,d0				*  å‡ºåŠ›ã¯
+		bsr	is_chrdev			*  ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ»ãƒ‡ãƒã‚¤ã‚¹ã‹ï¼Ÿ
 		seq	do_buffering
-		beq	stdout_is_block_device		*  -- ƒuƒƒbƒNEƒfƒoƒCƒX‚Å‚ ‚é
+		beq	stdout_is_block_device		*  -- ãƒ–ãƒ­ãƒƒã‚¯ãƒ»ãƒ‡ãƒã‚¤ã‚¹ã§ã‚ã‚‹
 	*
-	*  o—Í‚ÍƒLƒƒƒ‰ƒNƒ^EƒfƒoƒCƒX
+	*  å‡ºåŠ›ã¯ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ»ãƒ‡ãƒã‚¤ã‚¹
 	*
 		btst	#5,d0				*  '0':cooked  '1':raw
 		bne	outbuf_ok
@@ -188,17 +188,17 @@ decode_opt_done:
 
 stdout_is_block_device:
 	*
-	*  stdout‚ÍƒuƒƒbƒNEƒfƒoƒCƒX
+	*  stdoutã¯ãƒ–ãƒ­ãƒƒã‚¯ãƒ»ãƒ‡ãƒã‚¤ã‚¹
 	*
-		*  o—Íƒoƒbƒtƒ@‚ğŠm•Û‚·‚é
+		*  å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡ã‚’ç¢ºä¿ã™ã‚‹
 		*
 		move.l	#OUTBUF_SIZE,d0
 		move.l	d0,outbuf_free
 		bsr	malloc
 		bmi	insufficient_memory
 
-		movea.l	d0,a4				*  A4 : o—Íƒoƒbƒtƒ@‚Ìæ“ªƒAƒhƒŒƒX
-		movea.l	d0,a5				*  A5 : o—Íƒoƒbƒtƒ@‚Ìƒ|ƒCƒ“ƒ^
+		movea.l	d0,a4				*  A4 : å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡ã®å…ˆé ­ã‚¢ãƒ‰ãƒ¬ã‚¹
+		movea.l	d0,a5				*  A5 : å‡ºåŠ›ãƒãƒƒãƒ•ã‚¡ã®ãƒã‚¤ãƒ³ã‚¿
 outbuf_ok:
 		bsr	parse_count
 		lea	msg_header2(pc),a1
@@ -214,20 +214,20 @@ outbuf_ok:
 		shi	show_header
 do_files:
 	*
-	*  •W€“ü—Í‚ğØ‚è‘Ö‚¦‚é
+	*  æ¨™æº–å…¥åŠ›ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹
 	*
-		clr.w	-(a7)				*  •W€“ü—Í‚ğ
-		DOS	_DUP				*  •¡»‚µ‚½ƒnƒ“ƒhƒ‹‚©‚ç“ü—Í‚µC
+		clr.w	-(a7)				*  æ¨™æº–å…¥åŠ›ã‚’
+		DOS	_DUP				*  è¤‡è£½ã—ãŸãƒãƒ³ãƒ‰ãƒ«ã‹ã‚‰å…¥åŠ›ã—ï¼Œ
 		addq.l	#2,a7
 		move.l	d0,stdin
 		bmi	start_do_files
 
 		clr.w	-(a7)
-		DOS	_CLOSE				*  •W€“ü—Í‚ÍƒNƒ[ƒY‚·‚éD
-		addq.l	#2,a7				*  ‚±‚¤‚µ‚È‚¢‚Æ ^C ‚â ^S ‚ªŒø‚©‚È‚¢
+		DOS	_CLOSE				*  æ¨™æº–å…¥åŠ›ã¯ã‚¯ãƒ­ãƒ¼ã‚ºã™ã‚‹ï¼
+		addq.l	#2,a7				*  ã“ã†ã—ãªã„ã¨ ^C ã‚„ ^S ãŒåŠ¹ã‹ãªã„
 start_do_files:
 	*
-	*  ŠJn
+	*  é–‹å§‹
 	*
 		tst.l	d7
 		beq	do_stdin
@@ -246,10 +246,10 @@ do_stdin:
 		move.l	stdin,d1
 		bmi	open_fail
 
-		clr.w	-(a7)				*  æ“ª
-		clr.l	-(a7)				*  +0‚É
-		move.w	d1,-(a7)			*  •W€“ü—Í‚ğ
-		DOS	_SEEK				*  ƒV[ƒN
+		clr.w	-(a7)				*  å…ˆé ­
+		clr.l	-(a7)				*  +0ã«
+		move.w	d1,-(a7)			*  æ¨™æº–å…¥åŠ›ã‚’
+		DOS	_SEEK				*  ã‚·ãƒ¼ã‚¯
 		addq.l	#8,a7
 		bsr	head_one
 		bra	for_file_continue
@@ -281,10 +281,10 @@ exit_program:
 		move.l	stdin,d0
 		bmi	exit_program_1
 
-		clr.w	-(a7)				*  •W€“ü—Í‚ğ
-		move.w	d0,-(a7)			*  Œ³‚É
-		DOS	_DUP2				*  –ß‚·D
-		DOS	_CLOSE				*  •¡»‚ÍƒNƒ[ƒY‚·‚éD
+		clr.w	-(a7)				*  æ¨™æº–å…¥åŠ›ã‚’
+		move.w	d0,-(a7)			*  å…ƒã«
+		DOS	_DUP2				*  æˆ»ã™ï¼
+		DOS	_CLOSE				*  è¤‡è£½ã¯ã‚¯ãƒ­ãƒ¼ã‚ºã™ã‚‹ï¼
 exit_program_1:
 		move.w	d6,-(a7)
 		DOS	_EXIT2
@@ -376,7 +376,7 @@ head_one:
 		bsr	puts
 		movea.l	(a7)+,a0
 head_one_1:
-		move.l	count,d2			*  D2.L : ‘‚«o‚µƒJƒEƒ“ƒg
+		move.l	count,d2			*  D2.L : æ›¸ãå‡ºã—ã‚«ã‚¦ãƒ³ãƒˆ
 		beq	head_one_return
 
 		moveq	#0,d3				*  D3.L : bit0 - EOF
@@ -386,7 +386,7 @@ head_one_1:
 		sf	ignore_from_ctrld
 		move.w	d1,d0
 		bsr	is_chrdev
-		beq	head_one_2			*  -- ƒuƒƒbƒNEƒfƒoƒCƒX
+		beq	head_one_2			*  -- ãƒ–ãƒ­ãƒƒã‚¯ãƒ»ãƒ‡ãƒã‚¤ã‚¹
 
 		btst	#5,d0				*  '0':cooked  '1':raw
 		bne	head_one_2
@@ -403,7 +403,7 @@ head_loop:
 		move.w	d1,-(a7)
 		DOS	_READ
 		lea	10(a7),a7
-		move.l	d0,d4				*  D4.L : ƒoƒbƒtƒ@‚É“Ç‚İ‚ñ‚¾ƒoƒCƒg”
+		move.l	d0,d4				*  D4.L : ãƒãƒƒãƒ•ã‚¡ã«èª­ã¿è¾¼ã‚“ã ãƒã‚¤ãƒˆæ•°
 		bmi	read_fail
 
 		tst.b	ignore_from_ctrlz
@@ -432,7 +432,7 @@ output_lines:
 		btst	#FLAG_C,d5
 		beq	output_lines_putc
 
-		bset	#STAT_CR,d3			*  LF‚Ì‘O‚ÉCR‚ğ“f‚©‚¹‚é‚½‚ß
+		bset	#STAT_CR,d3			*  LFã®å‰ã«CRã‚’åã‹ã›ã‚‹ãŸã‚
 output_lines_putc:
 		bsr	flush_cr
 		bset	#STAT_CR,d3
@@ -656,18 +656,18 @@ malloc:
 	dc.b	'## head 1.5 ##  Copyright(C)1993-94 by Itagaki Fumihiko',0
 
 msg_myname:		dc.b	'head: ',0
-msg_no_memory:		dc.b	'ƒƒ‚ƒŠ‚ª‘«‚è‚Ü‚¹‚ñ',CR,LF,0
-msg_open_fail:		dc.b	': ƒI[ƒvƒ“‚Å‚«‚Ü‚¹‚ñ',CR,LF,0
-msg_read_fail:		dc.b	': “ü—ÍƒGƒ‰[',CR,LF,0
-msg_write_fail:		dc.b	'head: o—ÍƒGƒ‰[',CR,LF,0
-msg_stdin:		dc.b	'- •W€“ü—Í -',0
-msg_illegal_option:	dc.b	'•s³‚ÈƒIƒvƒVƒ‡ƒ“ -- ',0
-msg_illegal_count:	dc.b	'ƒJƒEƒ“ƒg‚Ìw’è‚ª•s³‚Å‚·',0
+msg_no_memory:		dc.b	'ãƒ¡ãƒ¢ãƒªãŒè¶³ã‚Šã¾ã›ã‚“',CR,LF,0
+msg_open_fail:		dc.b	': ã‚ªãƒ¼ãƒ—ãƒ³ã§ãã¾ã›ã‚“',CR,LF,0
+msg_read_fail:		dc.b	': å…¥åŠ›ã‚¨ãƒ©ãƒ¼',CR,LF,0
+msg_write_fail:		dc.b	'head: å‡ºåŠ›ã‚¨ãƒ©ãƒ¼',CR,LF,0
+msg_stdin:		dc.b	'- æ¨™æº–å…¥åŠ› -',0
+msg_illegal_option:	dc.b	'ä¸æ­£ãªã‚ªãƒ—ã‚·ãƒ§ãƒ³ -- ',0
+msg_illegal_count:	dc.b	'ã‚«ã‚¦ãƒ³ãƒˆã®æŒ‡å®šãŒä¸æ­£ã§ã™',0
 msg_header1:		dc.b	CR,LF
 msg_header2:		dc.b	'==> ',0
 msg_header3:		dc.b	' <=='
 msg_newline:		dc.b	CR,LF,0
-msg_usage:		dc.b	CR,LF,'g—p–@:  head [-qvBCZ] { [-<N>[ckl]] [--] [<ƒtƒ@ƒCƒ‹>] } ...',CR,LF,0
+msg_usage:		dc.b	CR,LF,'ä½¿ç”¨æ³•:  head [-qvBCZ] { [-<N>[ckl]] [--] [<ãƒ•ã‚¡ã‚¤ãƒ«>] } ...',CR,LF,0
 *****************************************************************
 .bss
 
